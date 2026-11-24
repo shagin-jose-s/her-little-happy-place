@@ -1,0 +1,599 @@
+.starfall-page {
+  min-height: 100vh;
+  padding: 100px 5% 80px;
+  background: #08070d;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.starfall-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.starfall-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.16;
+}
+
+.glow-a {
+  top: 0;
+  left: -150px;
+  background: #ff258f;
+}
+
+.glow-b {
+  right: -150px;
+  top: 500px;
+  background: #762dff;
+}
+
+.starfall-tiny-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ff8fc9;
+  border-radius: 50%;
+  opacity: 0.45;
+  animation: starfall-twinkle 2s ease-in-out infinite;
+}
+
+.starfall-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.starfall-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.starfall-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.starfall-back:hover {
+  border-color: #ff3e9e;
+  color: #ff78b9;
+  transform: translateX(-3px);
+}
+
+.starfall-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #ff73b6;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.starfall-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.starfall-label {
+  color: #ff71b5;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+}
+
+.starfall-heading h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 15px 0;
+}
+
+.starfall-heading h1 span {
+  color: #ff4ca3;
+  text-shadow: 0 0 35px rgba(255, 45, 149, 0.3);
+}
+
+.starfall-heading p {
+  color: #aaa3b5;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.starfall-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.starfall-stat {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.starfall-stat span {
+  display: block;
+  color: #8d8498;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 7px;
+}
+
+.starfall-stat strong {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.starfall-stat .combo-number {
+  color: #b984ff;
+}
+
+.danger-time {
+  color: #ff4e75;
+  animation: time-warning 0.7s infinite alternate;
+}
+
+.starfall-game-shell {
+  padding: 16px;
+  background: #110e18;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 23px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+}
+
+.starfall-game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px 15px;
+}
+
+.starfall-lives > span {
+  color: #91899e;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.starfall-lives > div {
+  display: flex;
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.life-active {
+  color: #ff4b91;
+  filter: drop-shadow(0 0 7px rgba(255, 75, 145, 0.4));
+}
+
+.life-lost {
+  color: #524859;
+}
+
+.starfall-game-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.starfall-game-controls button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 20px;
+  padding: 8px 12px;
+  color: #c8bfd2;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.starfall-game-controls button:hover {
+  border-color: #ff4b9d;
+  color: #ff75b9;
+}
+
+.starfall-field {
+  height: 430px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(116, 35, 119, 0.22), transparent 60%),
+    linear-gradient(180deg, #110e20, #171027 65%, #21122c);
+  border: 1px solid rgba(255, 98, 176, 0.13);
+  touch-action: pan-y;
+}
+
+.starfall-field.field-active {
+  cursor: crosshair;
+}
+
+.field-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.field-stars span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+  box-shadow: 0 0 7px #fff;
+}
+
+.falling-item {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  margin-left: -17px;
+  margin-top: -17px;
+  pointer-events: none;
+}
+
+.falling-star {
+  color: #ffdb71;
+  filter: drop-shadow(0 0 12px rgba(255, 218, 112, 0.75));
+}
+
+.falling-bomb {
+  color: #ff5b78;
+  filter: drop-shadow(0 0 12px rgba(255, 45, 90, 0.6));
+}
+
+.falling-crystal {
+  color: #8eeaff;
+  filter: drop-shadow(0 0 12px rgba(98, 218, 255, 0.75));
+}
+
+.starfall-player {
+  position: absolute;
+  bottom: 12px;
+  width: 76px;
+  height: 70px;
+  margin-left: -38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.player-glow {
+  position: absolute;
+  width: 85px;
+  height: 55px;
+  border-radius: 50%;
+  background: #ff329a;
+  filter: blur(32px);
+  opacity: 0.35;
+}
+
+.player-basket {
+  width: 57px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px 15px 22px 22px;
+  color: white;
+  background: linear-gradient(145deg, #ff62b1, #a642ff);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 0 25px rgba(255, 62, 158, 0.45),
+    inset 0 0 12px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.starfall-player > span {
+  margin-top: 3px;
+  font-size: 8px;
+  font-weight: 900;
+  color: #ffacd4;
+  letter-spacing: 1px;
+}
+
+.starfall-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(9, 6, 17, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.overlay-icon {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  color: #ff79b9;
+  background: rgba(255, 45, 149, 0.13);
+  border: 1px solid rgba(255, 45, 149, 0.27);
+  box-shadow: 0 0 35px rgba(255, 45, 149, 0.13);
+  margin-bottom: 20px;
+}
+
+.starfall-overlay h2 {
+  font-size: clamp(21px, 4vw, 29px);
+  margin: 0 0 10px;
+}
+
+.starfall-overlay p {
+  color: #aaa1b4;
+  font-size: 12px;
+  margin-bottom: 22px;
+  line-height: 1.7;
+}
+
+.starfall-start-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 23px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(100deg, #ff399d, #a64cff);
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255, 45, 149, 0.25);
+  transition: 0.3s;
+}
+
+.starfall-start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 45, 149, 0.4);
+}
+
+.result-icon {
+  color: #ffdb71;
+  background: rgba(255, 210, 100, 0.1);
+  border-color: rgba(255, 210, 100, 0.25);
+}
+
+.result-label {
+  color: #ff7dbd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.result-details {
+  display: flex;
+  gap: 30px;
+  margin: 5px 0 22px;
+}
+
+.result-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.result-details span {
+  font-size: 9px;
+  color: #8f859b;
+  letter-spacing: 1px;
+}
+
+.result-details strong {
+  font-size: 20px;
+  color: #ff85c0;
+}
+
+.starfall-game-footer {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 16px 0 2px;
+}
+
+.starfall-game-footer div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #a89eaf;
+  font-size: 10px;
+}
+
+.starfall-game-footer div:nth-child(1) svg {
+  color: #ffdc76;
+}
+
+.starfall-game-footer div:nth-child(2) svg {
+  color: #8eeaff;
+}
+
+.starfall-game-footer div:nth-child(3) svg {
+  color: #ff5b78;
+}
+
+.starfall-instructions {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.instruction-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff73b7;
+  margin-bottom: 20px;
+}
+
+.instruction-heading h3 {
+  font-size: 15px;
+  margin: 0;
+  color: #fff;
+}
+
+.instruction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.instruction-grid > div {
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.instruction-number {
+  font-size: 11px;
+  font-weight: 900;
+  color: #ff73b7;
+}
+
+.instruction-grid p {
+  color: #a9a1b3;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 8px 0 0;
+}
+
+.keyboard-tip {
+  color: #888092;
+  font-size: 10px;
+  margin: 20px 0 0;
+}
+
+.keyboard-tip span {
+  color: #ff79b9;
+  font-weight: 900;
+}
+
+.starfall-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding-top: 35px;
+  font-size: 9px;
+  color: #746c80;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.starfall-footer svg {
+  color: #ff55a6;
+}
+
+@keyframes starfall-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes time-warning {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 700px) {
+  .starfall-page {
+    padding: 95px 4% 70px;
+  }
+
+  .starfall-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .starfall-field {
+    height: 390px;
+  }
+
+  .instruction-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .starfall-logo {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .starfall-field {
+    height: 350px;
+  }
+
+  .starfall-game-shell {
+    padding: 10px;
+  }
+
+  .starfall-game-footer {
+    gap: 12px;
+  }
+
+  .starfall-game-footer div {
+    font-size: 9px;
+  }
+
+  .starfall-instructions {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfall-tiny-star,
+  .danger-time {
+    animation: none;
+  }
+}

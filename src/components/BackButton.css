@@ -1,0 +1,59 @@
+.smart-back-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 5;
+}
+
+.smart-back-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 17px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.smart-back-btn {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.smart-back-btn:hover {
+  background: rgba(255, 45, 149, 0.15);
+  border-color: #ff2d95;
+  color: #ff70b7;
+  transform: translateX(-4px);
+}
+
+.smart-home-btn {
+  color: #ff70b7;
+  background: rgba(255, 45, 149, 0.09);
+  border: 1px solid rgba(255, 45, 149, 0.25);
+}
+
+.smart-home-btn:hover {
+  color: white;
+  background: #ff2d95;
+  box-shadow: 0 0 22px rgba(255, 45, 149, 0.35);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .smart-back-controls {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .smart-back-controls button {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+}

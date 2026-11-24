@@ -1,0 +1,94 @@
+:root {
+  /* SLOFYBEATS COLOUR SYSTEM */
+
+  --black: #080610;
+  --black-soft: #0d0918;
+  --black-card: #130d21;
+
+  --purple-dark: #1b1030;
+  --purple: #542477;
+  --purple-light: #9b5de5;
+
+  --pink: #ff2e93;
+  --pink-light: #ff70b7;
+  --pink-soft: #ffb4d5;
+
+  --magenta: #d946ef;
+  --cyan: #70e1f5;
+
+  --white: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #c2b5d5;
+  --text-muted: #83758f;
+
+  /* GRADIENTS */
+
+  --gradient-main: linear-gradient(
+    135deg,
+    #080610 0%,
+    #170d2a 45%,
+    #2a103b 100%
+  );
+
+  --gradient-pink: linear-gradient(
+    135deg,
+    #ff2e93,
+    #d946ef
+  );
+
+  --gradient-purple: linear-gradient(
+    135deg,
+    #542477,
+    #9b5de5
+  );
+
+  --gradient-glow: linear-gradient(
+    135deg,
+    rgba(255, 46, 147, 0.2),
+    rgba(155, 93, 229, 0.2)
+  );
+
+  /* GLOW */
+
+  --glow-pink:
+    0 0 10px rgba(255, 46, 147, 0.5),
+    0 0 30px rgba(255, 46, 147, 0.25);
+
+  --glow-purple:
+    0 0 10px rgba(155, 93, 229, 0.5),
+    0 0 30px rgba(155, 93, 229, 0.25);
+
+  /* GLASS */
+
+  --glass-bg: rgba(255, 255, 255, 0.045);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(18px);
+
+  /* SHADOW */
+
+  --shadow-card:
+    0 15px 50px rgba(0, 0, 0, 0.35);
+
+  --shadow-pink:
+    0 10px 35px rgba(255, 46, 147, 0.18);
+
+  /* BORDER RADIUS */
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-full: 999px;
+
+  /* TRANSITIONS */
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+  --transition-smooth: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* FONTS */
+
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-display: "Playfair Display", serif;
+}

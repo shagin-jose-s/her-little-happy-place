@@ -1,0 +1,653 @@
+.memory-page {
+  min-height: 100vh;
+  padding: 100px 5% 75px;
+  background: #08070d;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.memory-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.memory-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.16;
+}
+
+.memory-glow-one {
+  top: -170px;
+  right: -150px;
+  background: #b04aff;
+}
+
+.memory-glow-two {
+  bottom: 0;
+  left: -180px;
+  background: #ff2d95;
+}
+
+.memory-stars span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #e5aaff;
+  opacity: 0.5;
+  animation: memory-twinkle 2.5s infinite;
+}
+
+.memory-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.memory-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.memory-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.memory-back-btn:hover {
+  color: #ff79bd;
+  border-color: #ff4b9f;
+  transform: translateX(-3px);
+}
+
+.memory-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c38cff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.memory-hero {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.memory-eyebrow {
+  color: #c48aff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.memory-hero h1 {
+  font-size: clamp(36px, 6vw, 63px);
+  margin: 16px 0;
+  letter-spacing: -2px;
+  font-weight: 900;
+}
+
+.memory-hero h1 span {
+  background: linear-gradient(100deg, #c47cff, #ff64b4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.memory-hero p {
+  color: #aaa2b6;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.memory-level-selector {
+  margin-bottom: 25px;
+}
+
+.memory-level-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.memory-level-heading > div:first-child > span {
+  font-size: 9px;
+  color: #c68cff;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.memory-level-heading h2 {
+  font-size: 21px;
+  margin: 6px 0 0;
+}
+
+.memory-progress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #ff9bc9;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.memory-levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.memory-level {
+  position: relative;
+  text-align: left;
+  padding: 16px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.memory-level:hover:not(:disabled),
+.memory-level.selected {
+  background: rgba(166, 92, 255, 0.12);
+  border-color: #a56aff;
+  transform: translateY(-3px);
+}
+
+.memory-level-number {
+  display: block;
+  color: #c58aff;
+  font-size: 10px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.memory-level strong {
+  display: block;
+  font-size: 14px;
+}
+
+.memory-level small {
+  display: block;
+  color: #8f879c;
+  font-size: 10px;
+  margin-top: 6px;
+}
+
+.memory-level > svg {
+  position: absolute;
+  right: 13px;
+  top: 15px;
+  color: #ff9bc9;
+}
+
+.memory-level.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.memory-level.completed {
+  border-color: rgba(255, 105, 183, 0.25);
+}
+
+.memory-game-shell {
+  position: relative;
+  padding: 22px;
+  border-radius: 22px;
+  background: #110e18;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.3);
+}
+
+.memory-game-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.memory-current-level span {
+  display: block;
+  color: #8d8499;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+.memory-current-level strong {
+  display: block;
+  font-size: 17px;
+  margin-top: 5px;
+  color: #e4caff;
+}
+
+.memory-game-stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.memory-game-stats div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #c3b5d3;
+  font-size: 10px;
+}
+
+.memory-game-stats div:nth-child(1) svg {
+  color: #ff85b9;
+}
+
+.memory-game-stats div:nth-child(2) svg {
+  color: #c58aff;
+}
+
+.memory-game-stats div:nth-child(3) svg {
+  color: #ffdb80;
+}
+
+.memory-progress-bar {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.memory-progress-bar div {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #a56aff, #ff59ae);
+  transition: width 0.4s ease;
+}
+
+.memory-progress-label {
+  display: flex;
+  justify-content: space-between;
+  color: #857c90;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.memory-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+  color: #e7baff;
+  font-size: 11px;
+  text-align: center;
+}
+
+.memory-message svg {
+  color: #ff77b9;
+}
+
+.memory-card-grid {
+  display: grid;
+  gap: 12px;
+  max-width: 570px;
+  margin: 0 auto;
+}
+
+.memory-grid-small {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 440px;
+}
+
+.memory-grid-medium {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 530px;
+}
+
+.memory-grid-large {
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 620px;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  perspective: 700px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-back,
+.memory-card-front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.memory-card-back {
+  color: #d6a9ff;
+  background: linear-gradient(145deg, #28203b, #171326);
+  border: 1px solid rgba(187, 130, 255, 0.2);
+  box-shadow: inset 0 0 20px rgba(166, 106, 255, 0.06);
+}
+
+.memory-card-back span {
+  font-size: 16px;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.memory-card-front {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, #30203d, #21182d);
+  border: 1px solid rgba(255, 113, 186, 0.45);
+  font-size: clamp(23px, 4vw, 37px);
+  box-shadow: 0 0 20px rgba(255, 70, 160, 0.12);
+}
+
+.memory-card.matched .memory-card-front {
+  background: linear-gradient(145deg, #3c2250, #2a173d);
+  border-color: #d17dff;
+  box-shadow: 0 0 23px rgba(181, 108, 255, 0.25);
+}
+
+.memory-card:disabled {
+  cursor: default;
+}
+
+.memory-game-footer {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.memory-game-footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.memory-game-footer div span {
+  color: #857c90;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.memory-game-footer div strong {
+  font-size: 17px;
+  color: #e3c5ff;
+}
+
+.memory-restart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d6c6e6;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.memory-restart-btn:hover {
+  color: #ff8dc5;
+  border-color: #ff65ad;
+}
+
+.memory-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(8, 5, 16, 0.9);
+  backdrop-filter: blur(9px);
+}
+
+.memory-overlay-content {
+  max-width: 440px;
+  text-align: center;
+}
+
+.memory-result-icon {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 22px;
+  color: #d29cff;
+  background: rgba(175, 101, 255, 0.12);
+  border: 1px solid rgba(190, 126, 255, 0.3);
+}
+
+.memory-result-label {
+  color: #ff85bd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.memory-overlay h2 {
+  font-size: clamp(22px, 4vw, 30px);
+  margin: 12px 0;
+}
+
+.memory-overlay p {
+  color: #aaa1b5;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.memory-primary-btn,
+.memory-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.memory-primary-btn {
+  color: white;
+  border: 0;
+  background: linear-gradient(100deg, #a95dff, #ff4fa6);
+  box-shadow: 0 8px 30px rgba(175, 92, 255, 0.23);
+}
+
+.memory-primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(175, 92, 255, 0.4);
+}
+
+.memory-secondary-btn {
+  margin-left: 10px;
+  color: #d7c7e9;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.memory-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  color: #766b82;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding-top: 35px;
+}
+
+.memory-footer svg {
+  color: #ff69ae;
+}
+
+@keyframes memory-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 650px) {
+  .memory-page {
+    padding: 95px 4% 65px;
+  }
+
+  .memory-game-shell {
+    padding: 15px;
+  }
+
+  .memory-game-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .memory-game-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .memory-card-grid {
+    gap: 8px;
+  }
+
+  .memory-grid-large {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .memory-card-back,
+  .memory-card-front {
+    border-radius: 10px;
+  }
+
+  .memory-card-back svg {
+    width: 17px;
+  }
+
+  .memory-card-back span {
+    font-size: 13px;
+  }
+
+  .memory-game-footer {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 430px) {
+  .memory-level-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .memory-levels {
+    gap: 7px;
+  }
+
+  .memory-level {
+    padding: 12px 9px;
+  }
+
+  .memory-level strong {
+    font-size: 11px;
+  }
+
+  .memory-level small {
+    font-size: 8px;
+  }
+
+  .memory-grid-large {
+    gap: 5px;
+  }
+
+  .memory-card-front {
+    font-size: 22px;
+  }
+
+  .memory-game-footer {
+    flex-wrap: wrap;
+  }
+
+  .memory-restart-btn {
+    padding: 9px 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-stars span {
+    animation: none;
+  }
+
+  .memory-card-inner {
+    transition-duration: 0.01ms;
+  }
+}

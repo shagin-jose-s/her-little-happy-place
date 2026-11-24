@@ -1,0 +1,168 @@
+:root {
+  --slofy-bg: #08070d;
+  --slofy-surface: #120e19;
+  --slofy-surface-light: #1b1425;
+  --slofy-pink: #ff3d9e;
+  --slofy-pink-light: #ff82bd;
+  --slofy-purple: #ad75ff;
+  --slofy-text: #ffffff;
+  --slofy-muted: #a49bad;
+  --slofy-border: rgba(255,255,255,.09);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--slofy-bg);
+}
+
+body {
+  margin: 0;
+  background: var(--slofy-bg);
+  color: var(--slofy-text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--slofy-pink);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: white;
+  background: rgba(255,61,158,.55);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0810;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff3d9e,#ad75ff);
+  border-radius: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-container {
+  background: transparent;
+  color: white;
+}
+
+/* Consistent dark panels */
+
+.activity-card,
+.letter-card,
+.mood-card,
+.brain-card,
+.arcade-game-card {
+  backdrop-filter: blur(12px);
+}
+
+/* Shared neon hover */
+
+.neon-hover {
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.neon-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255,45,149,.12);
+}
+
+/* Shared page headings */
+
+.gradient-text {
+  background: linear-gradient(100deg,#ff4ca4,#b47aff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Shared button */
+
+.slofy-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 22px;
+  color: white;
+  border: 0;
+  border-radius: 30px;
+  background: linear-gradient(100deg,#ff399e,#a64cff);
+  font-weight: 800;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.slofy-primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255,45,149,.28);
+}
+
+/* Shared subtle animation */
+
+@keyframes slofy-float {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slofy-glow {
+  0%,100% {
+    box-shadow: 0 0 12px rgba(255,45,149,.12);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255,45,149,.3);
+  }
+}
+
+@media(max-width:600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  button {
+    min-height: 38px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

@@ -1,0 +1,52 @@
+.floating-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-particle {
+  position: absolute;
+
+  color: #ff70b7;
+
+  opacity: 0;
+
+  text-shadow:
+    0 0 8px rgba(255, 46, 147, 0.9),
+    0 0 20px rgba(255, 46, 147, 0.5);
+
+  animation: particleFloat 8s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.5) rotate(0deg);
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-30px) scale(1.1) rotate(90deg);
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-90px) scale(0.6) rotate(180deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .floating-particle {
+    font-size: 10px !important;
+  }
+}

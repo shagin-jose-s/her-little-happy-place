@@ -1,0 +1,288 @@
+/* COMMON GAME PAGE */
+
+.game-page h1 {
+  font: 700 30px var(--font-display);
+  color: var(--plum);
+  margin: 17px 0 7px;
+}
+
+.back-link {
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* CATCH THE STARS */
+
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  color: var(--rose);
+
+  margin: 20px 0 10px;
+}
+
+.star-arena {
+  height: 330px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    145deg,
+    #f2edfb,
+    #fff0f3
+  );
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+}
+
+.game-start {
+  text-align: center;
+}
+
+.game-start div {
+  font-size: 52px;
+}
+
+.game-start p {
+  font: 600 17px var(--font-display);
+  color: var(--plum);
+  margin: 12px;
+}
+
+.game-start .primary-button {
+  padding: 13px 22px;
+}
+
+.catch-star {
+  border: 0;
+  background: none;
+
+  font-size: 50px;
+
+  animation: float 1.3s ease-in-out infinite;
+}
+
+.game-hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 17px;
+}
+
+
+/* MEMORY MATCH */
+
+.memory-stats,
+.quiz-progress {
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--rose);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  margin: 20px 0;
+}
+
+.memory-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin: 18px 0;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+
+  border: 1px solid #eee4ec;
+
+  border-radius: 17px;
+
+  background: linear-gradient(
+    145deg,
+    #f4eefa,
+    #fff0f3
+  );
+
+  font-size: 30px;
+
+  color: #c28eaa;
+
+  transition: transform .2s;
+}
+
+.memory-card.revealed {
+  background: white;
+  border-color: #e8c9d8;
+}
+
+.memory-card.matched {
+  background: #eaf5ed;
+  border-color: #b9d9c1;
+  transform: scale(.96);
+}
+
+
+/* SUCCESS MESSAGE */
+
+.game-success {
+  text-align: center;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: #f3edf9;
+
+  color: var(--rose);
+
+  margin: 15px 0;
+}
+
+.game-success h2 {
+  font: 700 22px var(--font-display);
+  color: var(--plum);
+}
+
+.game-success p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+
+/* EMOJI QUIZ */
+
+.emoji-question {
+  text-align: center;
+
+  font-size: 43px;
+
+  padding: 32px 10px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow: var(--shadow-soft);
+
+  margin-top: 22px;
+}
+
+.answer-list {
+  display: grid;
+  gap: 9px;
+}
+
+.answer-option {
+  padding: 14px;
+
+  border: 1px solid #eee6ec;
+
+  border-radius: 13px;
+
+  background: #fffafc;
+
+  color: var(--plum);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.answer-option.correct {
+  background: #e8f5eb;
+  border-color: #b5d9bd;
+}
+
+.answer-option.wrong {
+  background: #fff0f0;
+  border-color: #efc1c1;
+}
+
+.next-question {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+}
+
+.quiz-finished {
+  text-align: center;
+}
+
+.quiz-trophy {
+  font-size: 65px;
+  margin: 35px 0 15px;
+}
+
+.quiz-finished h2 {
+  font: 600 20px var(--font-display);
+  color: var(--rose);
+}
+
+.restart-quiz {
+  padding: 15px 24px;
+  margin-top: 20px;
+}
+
+
+/* TIC TAC TOE */
+
+.tic-status {
+  text-align: center;
+
+  margin: 25px 0;
+
+  color: var(--rose);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.tic-grid {
+  width: min(100%, 300px);
+
+  margin: 20px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 9px;
+}
+
+.tic-cell {
+  aspect-ratio: 1;
+
+  border: 0;
+
+  border-radius: 17px;
+
+  background: #f2edf8;
+
+  color: var(--plum);
+
+  font-size: 32px;
+
+  transition: transform .15s;
+}
+
+.tic-cell:active {
+  transform: scale(.93);
+}
+
+.game-page > .pill-button {
+  display: flex;
+  margin: 20px auto;
+}

@@ -1,0 +1,544 @@
+.play-garden-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #08070d;
+  color: #fff;
+  padding: 105px 6% 90px;
+}
+
+.arcade-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.arcade-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(rgba(255, 45, 149, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 45, 149, 0.12) 1px, transparent 1px);
+  background-size: 65px 65px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.arcade-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.19;
+}
+
+.orb-one {
+  width: 450px;
+  height: 450px;
+  background: #ff168e;
+  top: -180px;
+  right: -130px;
+}
+
+.orb-two {
+  width: 400px;
+  height: 400px;
+  background: #7527ff;
+  top: 650px;
+  left: -200px;
+}
+
+.arcade-floating-icon {
+  position: absolute;
+  color: rgba(255, 105, 183, 0.45);
+}
+
+.float-one {
+  top: 17%;
+  left: 8%;
+}
+
+.float-two {
+  top: 35%;
+  right: 9%;
+  color: rgba(173, 113, 255, 0.55);
+}
+
+.float-three {
+  top: 65%;
+  left: 5%;
+}
+
+.float-four {
+  top: 78%;
+  right: 12%;
+}
+
+.float-five {
+  top: 47%;
+  right: 4%;
+  color: rgba(112, 172, 255, 0.45);
+}
+
+.play-garden-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.arcade-hero {
+  text-align: center;
+  padding: 35px 0 80px;
+}
+
+.arcade-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 17px;
+  border-radius: 40px;
+  background: rgba(255, 45, 149, 0.09);
+  border: 1px solid rgba(255, 45, 149, 0.25);
+  color: #ff75b9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff45a3;
+  box-shadow: 0 0 12px #ff45a3;
+}
+
+.arcade-hero h1 {
+  margin: 28px 0 18px;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1.04;
+  letter-spacing: -4px;
+  font-weight: 900;
+}
+
+.arcade-hero h1 span {
+  background: linear-gradient(100deg, #ff3e9e, #b56cff, #ff80c4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 25px rgba(255, 45, 149, 0.2));
+}
+
+.arcade-hero > p {
+  color: #aaa5b6;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.arcade-hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.arcade-hero-stats div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  color: #d6d0df;
+  font-size: 12px;
+}
+
+.arcade-hero-stats svg {
+  color: #ff58a9;
+}
+
+.arcade-section {
+  padding-bottom: 75px;
+}
+
+.arcade-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.arcade-section-label {
+  font-size: 10px;
+  color: #ff65ae;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.arcade-section-heading h2 {
+  font-size: clamp(25px, 4vw, 38px);
+  margin: 10px 0 0;
+  font-weight: 850;
+  letter-spacing: -1px;
+}
+
+.arcade-section-heading h2 span {
+  color: #bd80ff;
+}
+
+.arcade-live-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a8a0b3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.arcade-live-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5bffae;
+  box-shadow: 0 0 12px #5bffae;
+}
+
+.arcade-game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.arcade-game-card {
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  padding: 25px;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #17121f, #0d0b13);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arcade-game-card:hover {
+  border-color: var(--game-color);
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.35);
+}
+
+.arcade-game-card.pink {
+  --game-color: #ff3d9c;
+  --game-rgb: 255, 61, 156;
+}
+
+.arcade-game-card.purple {
+  --game-color: #ad75ff;
+  --game-rgb: 173, 117, 255;
+}
+
+.arcade-game-card.blue {
+  --game-color: #61c8ff;
+  --game-rgb: 97, 200, 255;
+}
+
+.arcade-game-card.orange {
+  --game-color: #ffad65;
+  --game-rgb: 255, 173, 101;
+}
+
+.game-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.game-number {
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.game-tag {
+  color: var(--game-color);
+  background: rgba(var(--game-rgb), 0.09);
+  border: 1px solid rgba(var(--game-rgb), 0.2);
+  padding: 7px 11px;
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.game-icon-stage {
+  width: 115px;
+  height: 115px;
+  margin: 25px auto 20px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.game-icon-ring {
+  position: absolute;
+  border: 1px solid rgba(var(--game-rgb), 0.27);
+  border-radius: 50%;
+}
+
+.ring-one {
+  inset: 0;
+  animation: arcade-spin 12s linear infinite;
+  border-top-color: var(--game-color);
+}
+
+.ring-two {
+  inset: 12px;
+  border-style: dashed;
+  animation: arcade-spin 18s linear infinite reverse;
+}
+
+.game-main-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  color: var(--game-color);
+  background: rgba(var(--game-rgb), 0.12);
+  box-shadow: 0 0 40px rgba(var(--game-rgb), 0.18);
+  z-index: 1;
+}
+
+.game-card-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.game-category {
+  color: var(--game-color);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.game-card-info h3 {
+  font-size: 24px;
+  margin: 10px 0 5px;
+  font-weight: 850;
+}
+
+.game-card-info h4 {
+  font-size: 13px;
+  color: #c5bbd0;
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+
+.game-card-info p {
+  max-width: 390px;
+  margin: 0 auto;
+  color: #898394;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.game-launch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 23px auto 0;
+  width: fit-content;
+  min-width: 155px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  background: rgba(var(--game-rgb), 0.13);
+  border: 1px solid rgba(var(--game-rgb), 0.38);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.game-launch-btn:hover {
+  background: var(--game-color);
+  color: #09070e;
+  box-shadow: 0 0 25px rgba(var(--game-rgb), 0.3);
+  transform: translateY(-3px);
+}
+
+.game-card-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--game-color);
+  filter: blur(130px);
+  opacity: 0.08;
+  right: -100px;
+  bottom: -100px;
+  transition: opacity 0.3s ease;
+}
+
+.arcade-game-card:hover .game-card-glow {
+  opacity: 0.2;
+}
+
+.arcade-bottom-banner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  overflow: hidden;
+  padding: 28px 35px;
+  border-radius: 23px;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 45, 149, 0.13),
+    rgba(128, 72, 255, 0.12)
+  );
+  border: 1px solid rgba(255, 83, 169, 0.2);
+}
+
+.banner-icon {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  display: grid;
+  place-items: center;
+  color: #ff79bb;
+  border-radius: 18px;
+  background: rgba(255, 45, 149, 0.12);
+}
+
+.banner-content > span {
+  color: #ff79bb;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.banner-content h3 {
+  font-size: 21px;
+  margin: 7px 0;
+}
+
+.banner-content p {
+  color: #a49bad;
+  font-size: 12px;
+  margin: 0;
+}
+
+.banner-decoration {
+  margin-left: auto;
+  color: rgba(255, 106, 183, 0.22);
+  transform: rotate(15deg);
+}
+
+.arcade-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding-top: 45px;
+  color: #716979;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.arcade-footer span {
+  color: #ff55a6;
+}
+
+@keyframes arcade-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .play-garden-page {
+    padding: 95px 5% 80px;
+  }
+
+  .arcade-hero {
+    padding: 20px 0 60px;
+  }
+
+  .arcade-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .arcade-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .arcade-game-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .arcade-game-card {
+    min-height: 400px;
+  }
+
+  .arcade-bottom-banner {
+    padding: 23px;
+    gap: 15px;
+  }
+
+  .banner-content h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arcade-hero-stats {
+    gap: 8px;
+  }
+
+  .arcade-hero-stats div {
+    padding: 9px 11px;
+    font-size: 10px;
+  }
+
+  .arcade-game-card {
+    padding: 20px;
+  }
+
+  .game-card-info h3 {
+    font-size: 22px;
+  }
+
+  .banner-decoration {
+    display: none;
+  }
+
+  .arcade-bottom-banner {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-icon-ring {
+    animation: none;
+  }
+}

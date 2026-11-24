@@ -1,0 +1,160 @@
+.welcome-screen {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+
+  background:
+    radial-gradient(circle at 15% 15%, #fbe5e9 0, transparent 32%),
+    radial-gradient(circle at 85% 80%, #e9e1f8 0, transparent 34%),
+    #fffaf5;
+}
+
+.welcome-card {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 420px);
+  padding: 38px 28px 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 30px;
+
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 24px 70px rgba(116,83,105,.12);
+
+  animation: rise-in .7s both;
+}
+
+.welcome-emblem {
+  margin: 0 auto 20px;
+
+  width: 64px;
+  height: 64px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 23px;
+
+  background: linear-gradient(145deg,#f9dce4,#eee5fa);
+
+  color: var(--rose);
+}
+
+.welcome-card h1 {
+  font: 700 clamp(42px,12vw,58px)/1.05 var(--font-display);
+  color: var(--plum);
+  margin: 18px 0 12px;
+}
+
+.welcome-card h1 span {
+  color: var(--rose);
+}
+
+.welcome-copy {
+  max-width: 300px;
+  margin: 0 auto 28px;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.eyebrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--rose);
+  font-size: 10px;
+  letter-spacing: .16em;
+  font-weight: 800;
+}
+
+.primary-button {
+  border: 0;
+  border-radius: 15px;
+
+  background: linear-gradient(120deg,#d98fa8,#b9a4d8);
+
+  color: white;
+  font-weight: 700;
+
+  box-shadow: 0 9px 22px rgba(190,137,168,.25);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.welcome-button {
+  width: 100%;
+  height: 52px;
+  margin-top: 15px;
+}
+
+.welcome-foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  margin: 22px 0 0;
+
+  color: #b19eaa;
+  font-size: 11px;
+}
+
+.welcome-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: .6;
+}
+
+.orb-one {
+  width: 190px;
+  height: 190px;
+  background: #f6d5df;
+  top: -65px;
+  left: -70px;
+}
+
+.orb-two {
+  width: 230px;
+  height: 230px;
+  background: #e5dcf5;
+  right: -100px;
+  bottom: -75px;
+}
+
+.deco {
+  position: absolute;
+  color: #d59ab2;
+  font-size: 28px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.deco-one {
+  top: 12%;
+  right: 13%;
+}
+
+.deco-two {
+  bottom: 15%;
+  left: 12%;
+}
+
+.deco-three {
+  top: 22%;
+  left: 10%;
+}

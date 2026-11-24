@@ -1,0 +1,235 @@
+.activity-card {
+  position: relative;
+
+  min-height: 275px;
+
+  overflow: hidden;
+
+  border-radius: 27px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.015)
+  );
+
+  border: 1px solid var(--card-border);
+
+  box-shadow: var(--shadow-card);
+
+  transition: var(--transition-normal);
+}
+
+.activity-card-link {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 275px;
+
+  padding: 25px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.activity-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity-number {
+  color: var(--card-accent);
+
+  font-family: var(--font-heading);
+
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.activity-arrow {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--card-accent);
+
+  border-radius: 50%;
+
+  background: var(--card-glow);
+
+  transition: var(--transition-normal);
+}
+
+.activity-card:hover .activity-arrow {
+  transform: rotate(45deg);
+
+  background: var(--card-accent);
+
+  color: white;
+}
+
+.activity-card-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 22px 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 20px;
+
+  color: var(--card-accent);
+
+  background: var(--card-glow);
+
+  border: 1px solid var(--card-border);
+
+  box-shadow: 0 0 25px var(--card-glow);
+
+  font-size: 2rem;
+}
+
+.activity-card-content {
+  margin-top: auto;
+}
+
+.activity-tag {
+  display: inline-block;
+
+  font-size: 0.57rem;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: var(--card-accent);
+
+  margin-bottom: 9px;
+}
+
+.activity-card-content h3 {
+  font-family: var(--font-heading);
+
+  font-size: 1.35rem;
+
+  color: white;
+
+  margin-bottom: 8px;
+}
+
+.activity-card-content p {
+  font-size: 0.84rem;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+
+  max-width: 95%;
+}
+
+.activity-card-decoration {
+  position: absolute;
+
+  right: 18px;
+  bottom: 12px;
+
+  font-size: 6rem;
+
+  color: var(--card-glow);
+
+  opacity: 0.4;
+
+  pointer-events: none;
+}
+
+.activity-card-glow {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: var(--card-accent);
+
+  filter: blur(90px);
+
+  opacity: 0.16;
+
+  pointer-events: none;
+
+  transition: var(--transition-normal);
+}
+
+.activity-card:hover {
+  border-color: var(--card-accent);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px var(--card-glow);
+}
+
+.activity-card:hover .activity-card-glow {
+  opacity: 0.4;
+  transform: scale(1.5);
+}
+
+/* DIFFERENT CARD IDENTITIES */
+
+.activity-theme-pink {
+  --card-accent: #ff70b7;
+  --card-glow: rgba(255, 46, 147, 0.15);
+  --card-border: rgba(255, 112, 183, 0.23);
+}
+
+.activity-theme-purple {
+  --card-accent: #b58cff;
+  --card-glow: rgba(155, 93, 229, 0.16);
+  --card-border: rgba(181, 140, 255, 0.23);
+}
+
+.activity-theme-magenta {
+  --card-accent: #e879f9;
+  --card-glow: rgba(217, 70, 239, 0.16);
+  --card-border: rgba(232, 121, 249, 0.23);
+}
+
+.activity-theme-blue {
+  --card-accent: #70e1f5;
+  --card-glow: rgba(112, 225, 245, 0.14);
+  --card-border: rgba(112, 225, 245, 0.22);
+}
+
+.activity-theme-rose {
+  --card-accent: #ff9ebd;
+  --card-glow: rgba(255, 158, 189, 0.15);
+  --card-border: rgba(255, 158, 189, 0.23);
+}
+
+.activity-theme-gold {
+  --card-accent: #ffd166;
+  --card-glow: rgba(255, 209, 102, 0.13);
+  --card-border: rgba(255, 209, 102, 0.22);
+}
+
+@media (max-width: 600px) {
+  .activity-card,
+  .activity-card-link {
+    min-height: 250px;
+  }
+
+  .activity-card-link {
+    padding: 21px;
+  }
+
+  .activity-card-content h3 {
+    font-size: 1.25rem;
+  }
+}

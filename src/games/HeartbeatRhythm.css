@@ -1,0 +1,430 @@
+.heartbeat-page {
+  min-height: 100vh;
+  padding: 100px 5% 75px;
+  position: relative;
+  overflow: hidden;
+  background: #08070d;
+  color: white;
+}
+
+.heartbeat-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heartbeat-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: .17;
+}
+
+.heartbeat-glow-one {
+  background: #ff248e;
+  top: -160px;
+  left: -140px;
+}
+
+.heartbeat-glow-two {
+  background: #8a35ff;
+  right: -180px;
+  bottom: 0;
+}
+
+.heartbeat-orbit {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border: 1px solid rgba(255, 70, 165, .08);
+  border-radius: 50%;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heartbeat-container {
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heartbeat-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.heartbeat-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 30px;
+  color: white;
+  background: rgba(255,255,255,.05);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.heartbeat-back:hover {
+  border-color: #ff4c9e;
+  color: #ff7bb9;
+}
+
+.heartbeat-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ff79b9;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.heartbeat-hero {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.heartbeat-hero > span {
+  color: #ff7ab8;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.heartbeat-hero h1 {
+  font-size: clamp(35px, 6vw, 61px);
+  letter-spacing: -2px;
+  margin: 15px 0;
+}
+
+.heartbeat-hero h1 strong {
+  color: #ff4b9e;
+}
+
+.heartbeat-hero p {
+  color: #aaa2b5;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.heartbeat-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.heartbeat-dashboard div {
+  padding: 16px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 15px;
+  background: rgba(255,255,255,.045);
+}
+
+.heartbeat-dashboard span {
+  display: block;
+  color: #91879e;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.heartbeat-dashboard strong {
+  font-size: 22px;
+}
+
+.heartbeat-game-shell {
+  padding: 27px;
+  border-radius: 23px;
+  background: #120e1a;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 20px 70px rgba(0,0,0,.3);
+}
+
+.heartbeat-level-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff7ab9;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.heartbeat-level-count {
+  margin-left: auto;
+  color: #9d91ad;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.heartbeat-progress {
+  height: 5px;
+  margin: 18px 0 35px;
+  background: rgba(255,255,255,.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.heartbeat-progress div {
+  height: 100%;
+  background: linear-gradient(90deg,#ff329a,#a86aff);
+  transition: width .3s;
+}
+
+.heartbeat-track-area {
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.heartbeat-track-area::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 7px;
+  border-radius: 20px;
+  background: #34273d;
+}
+
+.heartbeat-zone {
+  position: absolute;
+  left: 45%;
+  width: 10%;
+  height: 45px;
+  border-radius: 10px;
+  background: rgba(255,62,158,.15);
+  border: 1px solid rgba(255,82,171,.45);
+  box-shadow: 0 0 25px rgba(255,45,149,.25);
+}
+
+.heartbeat-center-line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 65px;
+  background: #ff8cc5;
+  box-shadow: 0 0 12px #ff399d;
+}
+
+.heartbeat-marker {
+  position: absolute;
+  z-index: 2;
+  width: 43px;
+  height: 43px;
+  margin-left: -21px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ff55a9,#a64dff);
+  color: white;
+  box-shadow: 0 0 25px rgba(255,65,161,.5);
+}
+
+.heartbeat-result {
+  min-height: 25px;
+  text-align: center;
+  color: #ff8dc5;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+
+.heartbeat-action {
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.heartbeat-intro,
+.heartbeat-finish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heartbeat-icon {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 23px;
+  color: #ff6db2;
+  background: rgba(255,55,151,.12);
+  border: 1px solid rgba(255,80,170,.25);
+  margin-bottom: 15px;
+}
+
+.heartbeat-intro h2,
+.heartbeat-finish h2 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.heartbeat-intro p,
+.heartbeat-finish p {
+  color: #a49aac;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.heartbeat-intro button,
+.heartbeat-finish button,
+.heartbeat-tap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 27px;
+  border: 0;
+  border-radius: 30px;
+  color: white;
+  background: linear-gradient(100deg,#ff399e,#a64cff);
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255,45,149,.25);
+  transition: .3s;
+}
+
+.heartbeat-intro button:hover,
+.heartbeat-finish button:hover,
+.heartbeat-tap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255,45,149,.4);
+}
+
+.heartbeat-tap {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  flex-direction: column;
+  font-size: 16px;
+  border: 7px solid rgba(255,255,255,.13);
+  box-shadow: 0 0 50px rgba(255,45,149,.3);
+}
+
+.heartbeat-finish > svg {
+  color: #ffdc78;
+  margin-bottom: 15px;
+}
+
+.heartbeat-result-stats {
+  display: flex;
+  gap: 35px;
+  margin: 10px 0 22px;
+}
+
+.heartbeat-result-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.heartbeat-result-stats strong {
+  font-size: 21px;
+  color: #ff86bf;
+}
+
+.heartbeat-result-stats span {
+  color: #8e8499;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.heartbeat-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding-top: 20px;
+  color: #a99caf;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.heartbeat-legend span:first-child {
+  color: #ffdc7c;
+}
+
+.heartbeat-legend span:nth-child(2) {
+  color: #80dfff;
+}
+
+.heartbeat-legend span:last-child {
+  color: #ff779e;
+}
+
+.heartbeat-tips {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.07);
+  color: #ff7ab9;
+}
+
+.heartbeat-tips strong {
+  font-size: 12px;
+}
+
+.heartbeat-tips p {
+  margin: 5px 0 0;
+  color: #a79dae;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.heartbeat-footer {
+  text-align: center;
+  color: #71687c;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  padding-top: 35px;
+}
+
+@media(max-width:600px) {
+  .heartbeat-page {
+    padding: 95px 4% 65px;
+  }
+
+  .heartbeat-dashboard {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .heartbeat-game-shell {
+    padding: 18px;
+  }
+
+  .heartbeat-track-area {
+    margin: 0 3px;
+  }
+
+  .heartbeat-legend {
+    gap: 13px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .heartbeat-marker {
+    animation: none;
+  }
+}
